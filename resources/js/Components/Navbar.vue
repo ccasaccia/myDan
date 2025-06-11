@@ -21,7 +21,8 @@
                 <div class="pl-[60px] pt-10 flex items-center h-full">
                     <a href="https://daneurope.org" class="flex items-center">
                         <img src="/images/DANlogo.svg" class="w-[183px] h-[56px] opacity-100" alt="Dan Europe Logo" />
-                        <span class="ml-4 text-4xl font-semibold whitespace-nowrap dark:text-white hidden sm:inline">
+                        <span class="font-poppins font-[800] text-4xl ml-4 whitespace-nowrap dark:text-white hidden sm:inline">
+                        <!-- <span class="ml-4 text-4xl font-poppins font-bold whitespace-nowrap dark:text-white hidden sm:inline"> -->
                             MyDAN
                         </span>
                     </a>

@@ -8,7 +8,11 @@ export default {
         '../../storage/framework/views/*.php',
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                poppins: ['Poppins', 'sans-serif'],
+            },
+        },
     },
     plugins: [],
 };
