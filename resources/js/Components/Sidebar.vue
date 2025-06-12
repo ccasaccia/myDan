@@ -5,12 +5,15 @@
     :class="{ '-translate-x-full': !isSidebarOpen, 'sm:translate-x-0': true }"
     aria-label="Sidebar"
   >
-    <div class="h-full px-4 pt-20 pb-4 overflow-y-auto">
+    <div class="h-full px-4 pt-40 pb-4 overflow-y-auto">
       <ul class="space-y-4">
-        <navBarButton label="Dashboard" :active="active" @click="navigateTo('dashboard')" />
-        <navBarButton label="Iscrizione e assicurazione" :active="true" @click="navigateTo('iscrizione')" />
-        <navBarButton label="Account" :active="active" @click="navigateTo('account')" />
-        <navBarButton label="Programma Partner" :active="active" @click="navigateTo('partner')" />
+        <navBarButton
+          v-for="(button, index) in buttonDetails"
+          :key="index"
+          :label="button.label"
+          :active="button.active"
+          @click="navigateTo(button.navigateTo)"
+        />
       </ul>
     </div>
   </aside>
@@ -23,6 +26,13 @@ import navBarButton from './navBarButton.vue';
 const isSidebarOpen = ref(false);
 
 const active = ref(false);
+
+const buttonDetails = ref([
+    { label: 'Dashboard', active: false, navigateTo: 'dashboard' },
+    { label: 'Iscrizione e assicurazione', active: true, navigateTo: 'iscrizione' },
+    { label: 'Account', active: false, navigateTo: 'account' },
+    { label: 'Programma Partner', active: false, navigateTo: 'partner' }
+]);
 
 const navigateTo = (section) => {
     console.log(`Navigating to ${section}`);

@@ -1,26 +1,37 @@
 <template>
-    <div class="h-screen overflow-y-auto bg-gray-100 dark:bg-gray-900">
-      <!-- Navbar (emette evento toggle-sidebar) -->
-      <Navbar @toggle-sidebar="toggleSidebar" />
+  <div class="h-screen bg-gray-100 dark:bg-gray-900 flex flex-col">
+    <!-- Navbar (emette evento toggle-sidebar) -->
+    <Navbar @toggle-sidebar="toggleSidebar" />
 
-      <!-- Sidebar con riferimento -->
-      <Sidebar ref="sidebarRef" class="mt-4" />
+    <!-- Sidebar con riferimento -->
+    <Sidebar ref="sidebarRef" class="mt-4" />
 
-      <!-- Contenuto principale -->
-     <main class="p-4 sm:ml-[360px] mt-14">
-        <slot />
-      </main>
-    </div>
-  </template>
+    <!-- Contenuto principale -->
+    <main class="flex-1 p-4 sm:ml-[360px] mt-14 overflow-hidden">
+      <slot />
+    </main>
 
-  <script setup>
-  import { ref } from 'vue';
-  import Navbar from '@/Components/Navbar.vue';
-  import Sidebar from '@/Components/Sidebar.vue';
+    <!-- Footer -->
+    <Footer />
+  </div>
+</template>
 
-  const sidebarRef = ref(null);
+<script setup>
+import { ref } from 'vue';
+import Navbar from '@/Components/Navbar.vue';
+import Sidebar from '@/Components/Sidebar.vue';
+import Footer from '@/Components/Footer.vue';
 
-  const toggleSidebar = () => {
-    sidebarRef.value.toggleSidebar();
-  };
-  </script>
+const sidebarRef = ref(null);
+
+const toggleSidebar = () => {
+  sidebarRef.value.toggleSidebar();
+};
+</script>
+
+<style scoped>
+/* Rimuovi scroll dal body */
+body {
+  overflow: hidden;
+}
+</style>

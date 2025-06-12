@@ -21,8 +21,9 @@
                 <div class="pl-[60px] pt-10 flex items-center h-full">
                     <a href="https://daneurope.org" class="flex items-center">
                         <img src="/images/DANlogo.svg" class="w-[183px] h-[56px] opacity-100" alt="Dan Europe Logo" />
-                        <span class="font-poppins font-[800] text-4xl ml-4 whitespace-nowrap dark:text-white hidden sm:inline">
-                        <!-- <span class="ml-4 text-4xl font-poppins font-bold whitespace-nowrap dark:text-white hidden sm:inline"> -->
+                        <span
+                            class="font-poppins font-[800] text-4xl ml-4 whitespace-nowrap dark:text-white hidden sm:inline">
+                            <!-- <span class="ml-4 text-4xl font-poppins font-bold whitespace-nowrap dark:text-white hidden sm:inline"> -->
                             MyDAN
                         </span>
                     </a>
@@ -48,10 +49,10 @@
                     </div>
 
                     <!-- Guest Links -->
-                    <div v-else class="flex space-x-6">
-
+                    <div v-else class="flex space-x-6 border !border-red-500 redBorder p-2">
                         <font-awesome-icon :icon="['fas', 'arrow-right-from-bracket']" />
                     </div>
+
                 </div>
             </div>
         </div>
@@ -78,3 +79,8 @@ const $page = usePage();
 // Passa lo stato della sidebar come evento se necessario
 defineEmits(['toggle-sidebar']);
 </script>
+<style>
+.redBorder {
+    border: 2px solid red;
+}
+</style>
